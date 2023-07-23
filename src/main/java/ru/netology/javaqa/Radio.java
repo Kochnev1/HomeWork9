@@ -17,6 +17,15 @@ public class Radio {
         currentRadioStationNumber = newCurrentRadioStationNumber;
     }
 
+    public void nextRadioStation() {
+        int next = currentRadioStationNumber + 1;
+        setCurrentRadioStationNumber(next);
+    }
+    public void prevRadioStationNumber() {
+        int prev = currentRadioStationNumber - 1;
+        setCurrentRadioStationNumber(prev);
+    }
+
     public void setMaxRadioStationNumber() {
         currentRadioStationNumber = 9;
 
