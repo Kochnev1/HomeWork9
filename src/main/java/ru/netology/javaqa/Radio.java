@@ -1,7 +1,15 @@
 package ru.netology.javaqa;
 
 public class Radio {
-    private int currentRadioStationNumber;
+    private int maxRadioStation = 9;
+    private int minRadioStation = 0;
+    private int currentRadioStationNumber = minRadioStation;
+
+    public Radio(int minRadioStation, int maxRadioStation) {
+        this.minRadioStation = minRadioStation;
+        this.maxRadioStation = maxRadioStation;
+    }
+
 
     private int currentVolume;
 
@@ -9,12 +17,20 @@ public class Radio {
         return currentRadioStationNumber;
     }
 
+    public int getMaxRadioStation() {
+        return maxRadioStation;
+    }
+
+    public int getMinRadioStation() {
+        return minRadioStation;
+    }
+
     public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
         if (newCurrentRadioStationNumber < 0) {
-            newCurrentRadioStationNumber = 9;
+            newCurrentRadioStationNumber = maxRadioStation;
 
         }
-        if (newCurrentRadioStationNumber > 9) {
+        if (newCurrentRadioStationNumber > maxRadioStation) {
             newCurrentRadioStationNumber = 0;
         }
         currentRadioStationNumber = newCurrentRadioStationNumber;
