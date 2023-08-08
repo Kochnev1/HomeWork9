@@ -4,6 +4,16 @@ public class Radio {
     private int currentRadioStationNumber;
 
     private int currentVolume;
+    private int stationCount;
+
+    public Radio(int stationCount) {
+        this.stationCount = stationCount;
+
+    }
+
+    public Radio() {
+        this.stationCount = 10;
+    }
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
@@ -11,10 +21,10 @@ public class Radio {
 
     public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
         if (newCurrentRadioStationNumber < 0) {
-            newCurrentRadioStationNumber = 9;
+            newCurrentRadioStationNumber = stationCount -1;
 
         }
-        if (newCurrentRadioStationNumber > 9) {
+        if (newCurrentRadioStationNumber > stationCount -1) {
             newCurrentRadioStationNumber = 0;
         }
         currentRadioStationNumber = newCurrentRadioStationNumber;
