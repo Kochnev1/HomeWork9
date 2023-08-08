@@ -1,36 +1,30 @@
 package ru.netology.javaqa;
 
 public class Radio {
-    private int maxRadioStation = 9;
-    private int minRadioStation = 0;
-    private int currentRadioStationNumber = minRadioStation;
-
-    public Radio(int minRadioStation, int maxRadioStation) {
-        this.minRadioStation = minRadioStation;
-        this.maxRadioStation = maxRadioStation;
-    }
-
+    private int currentRadioStationNumber;
 
     private int currentVolume;
+    private int stationCount;
+
+    public Radio(int stationCount) {
+        this.stationCount = stationCount;
+
+    }
+
+    public Radio() {
+        this.stationCount = 10;
+    }
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
     }
 
-    public int getMaxRadioStation() {
-        return maxRadioStation;
-    }
-
-    public int getMinRadioStation() {
-        return minRadioStation;
-    }
-
     public void setCurrentRadioStationNumber(int newCurrentRadioStationNumber) {
         if (newCurrentRadioStationNumber < 0) {
-            newCurrentRadioStationNumber = maxRadioStation;
+            newCurrentRadioStationNumber = stationCount -1;
 
         }
-        if (newCurrentRadioStationNumber > maxRadioStation) {
+        if (newCurrentRadioStationNumber > stationCount -1) {
             newCurrentRadioStationNumber = 0;
         }
         currentRadioStationNumber = newCurrentRadioStationNumber;
